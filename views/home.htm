@@ -1,0 +1,29 @@
+<div class="page-header text-center">
+    <h1>My Todos</h1>
+</div>
+<br/>
+<div ng-switch="todos.length">
+    <div ng-switch-when=0>
+        <div class="row">
+            <div class="col-md-12 alert alert-success" role="alert">
+                No Active Todos
+            </div>
+        </div>
+    </div>
+
+    <div ng-switch-default>
+        <div class="row" ng-repeat="todo in todos">
+            <div class="col-md-8">
+                <a href>
+                   {{todo.todo.title}}
+                </a>
+
+                <div class="row">
+                    <div ng-repeat="tag in todo.todo.tags">
+                        <span class="badge badge-success">{{tag.tag.name}}</span>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
